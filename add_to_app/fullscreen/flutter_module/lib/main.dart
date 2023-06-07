@@ -4,7 +4,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_module/plaid.dart';
 import 'package:provider/provider.dart';
+
+import 'dart:async';
+
+import 'package:plaid_flutter/plaid_flutter.dart';
 
 /// The entrypoint for the flutter module.
 void main() {
@@ -68,6 +73,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const FullScreenView(),
         '/mini': (context) => const Contents(),
+        '/plaid': (context) => PlaidApp(),
       },
     );
   }
@@ -156,6 +162,10 @@ class Contents extends StatelessWidget {
                     child: const Text('Exit this screen'),
                   ),
                 ],
+                ElevatedButton(
+                  onPressed: () => Navigator.pushNamed(context, '/plaid'),
+                  child: const Text('Start plaid'),
+                ),
               ],
             ),
           ),

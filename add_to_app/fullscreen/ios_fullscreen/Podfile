@@ -3,6 +3,7 @@
 
 flutter_application_path = '../flutter_module'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+pod 'Plaid'
 
 target 'IOSFullScreen' do
   # Comment the next line if you don't want to use dynamic frameworks
